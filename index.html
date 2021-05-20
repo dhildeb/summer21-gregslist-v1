@@ -28,12 +28,12 @@
                     <button class="btn btn-primary btn-block" onclick="app.carsController.drawCars()">Cars</button>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary btn-block">Houses</button>
+                    <button class="btn btn-primary btn-block"
+                        onclick="app.housesController.drawHouses()">Houses</button>
                 </div>
-                <!-- <div class="col-2"><button class="btn btn-info">Missed Connections Soooon</button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div> -->
+                <div class="col-2"><button class="btn btn-primary btn-block"
+                        onclick="app.jobsController.drawJobs()">Jobs</button>
+                </div>
             </div>
             <div class="row" id="listings">
 
@@ -41,7 +41,7 @@
 
             <div class="row mb-5">
                 <div class="col-12">
-                    <button class="fab" onclick="app.carsController.toggleForm()">+</button>
+                    <button class="fab bg-success" onclick="app.formController.toggleForm()">+</button>
                 </div>
                 <div class="col-lg-8 m-auto">
                     <form class="card p-3 shadow d-none" id="car-form" onsubmit="app.carsController.addCar(event)">
@@ -71,9 +71,62 @@
                         </div>
                         <button type="submit">submit form</button>
                     </form>
-                    <!-- <form onsubmit="app.housesController.addHouse(event)">
-                        TODO that you not me
-                    </form> -->
+
+                    <form id="house-form" class="card shadow m-3 p-3 d-none "
+                        onsubmit="app.housesController.addHouse(event)">
+                        <div class="form-group">
+                            <lable for="img" class="sr-only">img: </lable>
+                            <input class="form-control" placeholder="img" type="text" id="img">
+                        </div>
+                        <div class="form-group">
+                            <lable for="price" class="sr-only">price: </lable>
+                            <input class="form-control" placeholder="price" type="number" id="price">
+                        </div>
+                        <div class="form-group">
+                            <lable for="bedrooms" class="sr-only">bedrooms: </lable>
+                            <input class="form-control" placeholder="bedrooms" type="number" id="bedrooms">
+                        </div>
+                        <div class="form-group">
+                            <lable for="bathrooms" class="sr-only">bathrooms: </lable>
+                            <input class="form-control" placeholder="bathrooms" type="number" id="bathrooms">
+                        </div>
+                        <div class="form-group">
+                            <lable for="sqft" class="sr-only">sqft: </lable>
+                            <input class="form-control" placeholder="sqft" type="number" id="sqft">
+                        </div>
+                        <div class="form-group">
+                            <lable for="address" class="sr-only">address: </lable>
+                            <input class="form-control" placeholder="address" type="text" id="address">
+                        </div>
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </form>
+                    <form id="job-form" class="card shadow m-3 p-3 d-none" onsubmit="app.jobsController.addJob(event)">
+                        <div class="form-group">
+                            <label for="jobPosition" class="sr-only">job position</label>
+                            <input type="text" class="form-control" placeholder="job position" id="jobPosition">
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="sr-only">location</label>
+                            <input type="text" class="form-control" placeholder="location" id="location">
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="sr-only">company</label>
+                            <input type="text" class="form-control" placeholder="company" id="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="wage" class="sr-only">wage</label>
+                            <input type="text" class="form-control" placeholder="wage" id="wage">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullTime">full-time</label>
+                            <input type="checkbox" class="form-control" id="fullTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="sr-only">description</label>
+                            <input type="text" class="form-control" placeholder="description" id="description">
+                        </div>
+                        <button class="btn btn-success" type="submit">submit</button>
+                    </form>
                 </div>
             </div>
 
