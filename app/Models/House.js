@@ -1,14 +1,13 @@
 export class House {
-  constructor({ price, bedrooms, bathrooms, imgUrl, year, houseId, description, id, levels }) {
-    this.price = price
-    this.bedrooms = bedrooms
-    this.bathrooms = bathrooms
-    this.year = year
-    this.imgUrl = imgUrl
-    this.houseId = houseId
-    this.description = description
-    this.id = id
-    this.levels = levels || 1
+  constructor(data) {
+    this.price = data.price
+    this.bedrooms = data.bedrooms
+    this.bathrooms = data.bathrooms
+    this.year = data.year
+    this.imgUrl = data.imgUrl
+    this.description = data.description
+    this.id = data._id
+    this.levels = data.levels || 1
   }
 
   get template() {

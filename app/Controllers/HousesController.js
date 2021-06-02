@@ -44,8 +44,10 @@ export class HousesController {
         }
     }
     editHouse(id) {
+        console.log(id)
         let house = ProxyState.houses.find(h => h.id == id)
         console.log(house)
+        console.log(ProxyState.houses)
         let form = document.getElementById("house-form")
         form.imgUrl.value = house.imgUrl
         form.price.value = house.price

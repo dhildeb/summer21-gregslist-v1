@@ -6,6 +6,7 @@ class HousesService {
 
   async getHouses() {
     let res = await axios.get(url)
+    console.log(res.data)
     ProxyState.houses = res.data.map(h => new House(h))
   }
   async addHouse(formData) {
