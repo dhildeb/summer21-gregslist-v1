@@ -1,11 +1,12 @@
 import { ProxyState } from "../AppState.js";
 import { Car } from "../Models/Car.js";
 
-let url = 'https://bcw-sandbox.herokuapp.com/api/cars/'
+let url = 'http://localhost:3000/api/cars/'
 class CarsService {
 
     async getCars() {
         let res = await axios.get(url)
+        console.log(res)
         ProxyState.cars = res.data.map(c => new Car(c))
     }
     async addCar(formData) {

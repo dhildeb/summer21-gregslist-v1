@@ -6,6 +6,7 @@ export class HousesController {
 
     constructor() {
         ProxyState.on("houses", this.drawHouses)
+        housesService.getHouses()
     }
     drawHouses() {
         let template = ''
@@ -44,6 +45,7 @@ export class HousesController {
     }
     editHouse(id) {
         let house = ProxyState.houses.find(h => h.id == id)
+        console.log(house)
         let form = document.getElementById("house-form")
         form.imgUrl.value = house.imgUrl
         form.price.value = house.price
